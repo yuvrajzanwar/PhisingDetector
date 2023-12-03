@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "WebSenitel",
+  "version": "1.0",
+  "description": "Detection of malicious emails and phishing websites",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "declarativeContent",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://your-model-api-url/*"
+  ]
+}
