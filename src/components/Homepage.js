@@ -1,11 +1,14 @@
 import React, { useState,useEffect } from 'react';
 import "../styles/styles_homepage.css";
+
+
+
 const Homepage = () => {
   const [status,setStatus] =useState("processed");
   //no-input,processing,processed.
   const [verdict,setVerdict] = useState("secure");
   //secure,suspicious(or unsafe)
-  const [tab, setTab] = useState("email");
+  const [tab, setTab] = useState("url");
   //url or email
   const [url, setUrl] =useState('');
 
@@ -62,63 +65,33 @@ const Homepage = () => {
         },
         body: JSON.stringify({ url }),
       });
-
+      
       const data = await response.json();
 
       // Update the UI based on the phishing detection result
       setStatus(data.status);
+
+
     } catch (error) {
       console.error('Error checking phishing status:', error);
     }
   };
 
-  const Urlbody = () =>{
-    const extractCurrentUrl = () => {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const currentUrl = tabs[0].url;
+  
+  const extractCurrentUrl = () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const currentUrl = tabs[0].url;
+      if(currentUrl !== 'chrome://newtab/')
         setUrl(currentUrl);
-        console.log('Current URL:', currentUrl);
-      });
-    };
+      console.log('Current URL:', currentUrl);
+    });
+  };
 
-    useEffect(() => {
-      // Call the function to extract the current URL on component mount
+
+  useEffect(() => {
+    // Call the function to extract the current URL on component mount
       extractCurrentUrl();
-    }, []);
-
-    return(
-      <>
-        <div className='url-body'>
-        <div className='height-setter'>
-          <div className='upper-title'>Enter a URL below to check its authenticity</div>
-          <div>
-            <input type='text' 
-            name='link' 
-            className='input-link' 
-            placeholder='Enter the link here'
-            value={url}
-            onChange={handleInputChange}/>
-          </div>
-          <div className='search-button'><button>Check</button></div>
-          <div className='verdict'>
-            <div className='verdict-logo'>
-            <img
-              src={showVerdictLogo()}
-              alt={showVerdictText}
-              style={{ height: '5rem',
-              }}
-            />
-            </div>
-            <div className='verdict-text-container'>
-              <div className='verdict-text'>{showVerdictText()}</div>
-            </div>
-          </div>
-          </div>
-          <div className='description'>Our Extension does real-time analysis to check if the provided URL is a phishing one</div>
-        </div>
-      </>
-    )
-  }
+  }, []);
 
   const Emailbody = () =>{
 
@@ -241,7 +214,43 @@ const Homepage = () => {
       </button>
     </div>
     <div>
-      {(tab === "url")? <Urlbody/> : <Emailbody/>}
+      {/* {(tab === "link")? <Urlbody/> : <Emailbody/>} */}
+      {tab === "url" ? (
+        <>
+          <div className='url-body'>
+          <div className='height-setter'>
+            <div className='upper-title'>Enter a URL below to check its authenticity</div>
+            <div>
+              <input type='text' 
+                name='link' 
+                className='input-link' 
+                placeholder='Enter the link here'
+                value={url}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='search-button'><button>Check</button></div>
+            <div className='verdict'>
+              <div className='verdict-logo'>
+              <img
+                src={showVerdictLogo()}
+                alt={showVerdictText}
+                style={{ height: '5rem',
+                }}
+              />
+              </div>
+              <div className='verdict-text-container'>
+                <div className='verdict-text'>{showVerdictText()}</div>
+              </div>
+            </div>
+            </div>
+            <div className='description'>Our Extension does real-time analysis to check if the provided URL is a phishing one</div>
+          </div>
+        </>
+        )
+      :
+        <Emailbody/>
+      }
     </div>
     </div>
     </>
