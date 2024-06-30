@@ -32,11 +32,15 @@ python app.py
 
 ![Wen Sentinal Screenshot](utilities/extension.png)
 
+
 ![Wen Sentinal Screenshot](utilities/facebook-safe.png)
+
 
 ![Wen Sentinal Screenshot](utilities/facebook-scam.png) 
 
+
 ![Wen Sentinal Screenshot](utilities/mail-safe.png) 
+
 
 ![Wen Sentinal Screenshot](utilities/mail-scam.png) 
 
