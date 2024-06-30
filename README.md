@@ -6,26 +6,39 @@ The research introduces an innovative ML-driven system designed to combat phishi
 The study presents a machine learning-based system to mitigate malicious emails and phishing attempts. It utilizes a thorough methodology that includes gathering datasets, preprocessing, creating ML models, and creating an intuitive browser extension interface. The system detects malicious email content with 98.6% accuracy and phishing URLs with 96.4% accuracy. This same seamless integration of the graphical user interface into users' digital environments is implied.
 
 
-
 ### To Run
+Build the frontend
 ```bash
 cd frontend
-npm start
+npm run build
+```
+Load the extension in Chrome
+1) Open Chrome and navigate to chrome://extensions/.
+2) Enable "Developer mode" in the top right corner.
+3) Click "Load unpacked" and select the build folder that was created.
+4) The extension will now be added to Chrome.
+
+
+*The backend is already deployed and integrated. However, if you want to run the backend locally, follow these steps:*
+```bash
 # in another terminal
 cd backend
 pip install -r requirements.txt
 python app.py
+#(make sure to change the routes in the frontend)
 ```
 
 ### Outcome
 
-![Wen Sentinal Screenshot](utilities/Picture1.png)
+![Wen Sentinal Screenshot](utilities/extension.png)
 
-![Wen Sentinal Screenshot](utilities/Picture2.png)
+![Wen Sentinal Screenshot](utilities/facebook-safe.png)
 
-![Wen Sentinal Screenshot](utilities/Picture3.png) 
+![Wen Sentinal Screenshot](utilities/facebook-scam.png) 
 
-![Wen Sentinal Screenshot](utilities/Picture4.png) 
+![Wen Sentinal Screenshot](utilities/mail-safe.png) 
+
+![Wen Sentinal Screenshot](utilities/mail-scam.png) 
 
 
 
