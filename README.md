@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Phishing Detection Extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### About
+The research introduces an innovative ML-driven system designed to combat phishing attacks and malicious emails. It uniquely adopts a comprehensive approach, encompassing dataset collection, preprocessing, ML model development, and a user-friendly browser extension interface. Achieving so by facilitating the process of identifying phishing URLs through XGBoost and detecting malicious email content using Multinomial Naive Bayes, it exemplifies heightened cybersecurity protocols. The dataset mirrors diverse phishing scenarios, guided by thorough Exploratory Data Analysis (EDA). The XGBoost model utilizes URL features for precise phishing website identification, while the Multinomial Naive Bayes excels in discerning malicious email content. Implemented as a browser extension, the graphical user interface ensures seamless integration into users' digital landscapes, enabling immediate feedback on encountered threats for swift mitigation and user awareness.
 
-## Available Scripts
+The study presents a machine learning-based system to mitigate malicious emails and phishing attempts. It utilizes a thorough methodology that includes gathering datasets, preprocessing, creating ML models, and creating an intuitive browser extension interface. The system detects malicious email content with 98.6% accuracy and phishing URLs with 96.4% accuracy. This same seamless integration of the graphical user interface into users' digital environments is implied.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### To Run
+```bash
+cd frontend
+npm start
+# in another terminal
+cd backend
+pip install -r requirements.txt
+python app.py
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Outcome
 
-### `npm test`
+![Wen Sentinal Screenshot](utilities/Picture1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Wen Sentinal Screenshot](utilities/Picture2.png)
 
-### `npm run build`
+![Wen Sentinal Screenshot](utilities/Picture3.png) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Wen Sentinal Screenshot](utilities/Picture4.png) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
